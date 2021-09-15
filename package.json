@@ -6,7 +6,6 @@
   "author": "Kevin",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.7",
-    
     "framer-motion": "^4.1.17",
     "gatsby": "^3.6.2",
     "gatsby-image": "^3.11.0",

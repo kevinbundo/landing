@@ -12,6 +12,7 @@ import {
 import Navigation from "../components/navigation"
 import Footer from "./footer"
 
+
 const GlobalStyle = createGlobalStyle`
 ${normalize}
 *{
@@ -27,7 +28,7 @@ html {
 }
 body{
 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-background: ${props => props.theme.background};
+background: ${(props) => props.theme.background};
 overscroll-behavior: none;
  overflow-x: hidden;
 }
@@ -70,7 +71,7 @@ const Layout = ({ children }) => {
 
   const dispatch = useGlobalDispatchContext()
 
-  const onCursor = cursorType => {
+  const onCursor = (cursorType) => {
     cursorType = (cursorStyles.includes(cursorType) && cursorType) || false
     dispatch({ type: "CURSOR_TYPE", cursorType: cursorType })
   }
@@ -94,6 +95,7 @@ const Layout = ({ children }) => {
         onCursor={onCursor}
       />
       <main>{children}</main>
+
       <Footer onCursor={onCursor} />
     </ThemeProvider>
   )

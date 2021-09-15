@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { motion } from "framer-motion"
 
 export const Banner = styled.div`
-  background: ${props => props.theme.background};
+  background: ${(props) => props.theme.background};
   height: 100vh;
   width: 100%;
   position: relative;
@@ -33,14 +33,14 @@ export const BannerTitle = styled(motion.h1)`
   position: absolute;
   bottom: -120px;
   left: 0px;
-  color: ${props => props.theme.text};
+  color: ${(props) => props.theme.text};
   pointer-events: none;
   @media (max-width: 600px) {
-    color: ${props => props.theme.red};
+    color: ${(props) => props.theme.red};
     bottom: 150px;
   }
   @media (max-width: 1000px) {
-    color: ${props => props.theme.red};
+    color: ${(props) => props.theme.red};
     bottom: 150px;
   }
 `
@@ -53,11 +53,10 @@ export const Headline = styled(motion.span)`
     font-size: 3.3rem;
     margin-left: 10px;
   } */
-    @media (max-width: 600px) {
+  @media (max-width: 600px) {
     font-size: 3.7rem;
     margin-left: 10px;
-  
-    }
+  }
   @media (min-width: 601px) and (max-width: 1024px) {
     font-size: 4rem;
     margin-left: 10px;
@@ -74,7 +73,7 @@ export const Content = styled(motion.h2)`
   font-size: 2.3rem;
   font-weight: 400;
   margin-left: 124px;
-  color: ${props => props.theme.text};
+  color: ${(props) => props.theme.text};
   @media (max-width: 1000px) {
     width: 100% !important;
     margin: 10px;
@@ -95,7 +94,7 @@ export const FeaturedContent = styled(motion.div)`
   width: 100%;
   padding: 56px 124px;
   box-sizing: border-box;
-  color: ${props => props.theme.text};
+  color: ${(props) => props.theme.text};
   @media (max-width: 1000px) {
     padding: 0px 20px;
   }
@@ -141,7 +140,7 @@ export const FeaturedContent = styled(motion.div)`
           width: 78px;
         }
         path {
-          fill: ${props => props.theme.text};
+          fill: ${(props) => props.theme.text};
         }
       }
     }
@@ -207,7 +206,7 @@ export const About = styled.div`
     font-size: 2.5rem;
     font-weight: 400;
     margin-left: 124px;
-    color: ${props => props.theme.text};
+    color: ${(props) => props.theme.text};
     @media (max-width: 650px) {
       margin-left: 15px;
       width: 100%;
@@ -218,7 +217,7 @@ export const About = styled.div`
     font-size: 1.2rem;
     line-height: 1.8rem;
     margin-left: 124px;
-    color: ${props => props.theme.text};
+    color: ${(props) => props.theme.text};
     @media (max-width: 650px) {
       margin-left: 15px;
       width: 100%;
@@ -261,9 +260,33 @@ export const AccordionContent = styled(motion.div)`
     width: 100%;
     margin: 8px 0;
     font-size: 1rem;
-    color: ${props => props.theme.text} !important;
+    color: ${(props) => props.theme.text} !important;
     text-transform: uppercase;
     display: block;
     font-weight: 300;
   }
+`
+
+export const HomeBannerAnim = styled(motion.div)`
+  height: 550px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  height: 120px;
+  z-index: 99;
+  align-items: center;
+  margin-bottom: 0px;
+  margin-left: 0;
+  white-space: nowrap;
+  
+`
+
+export const HomeBannerAnimTitle = styled(motion.h3)`
+  font-size: 5rem;
+  font-weight: 400;
+  margin-left: 10px;
+  color: ${(props) => props.theme.text};
+  white-space: nowrap;
+  display: inline-block;
+  
 `

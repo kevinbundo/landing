@@ -7,7 +7,6 @@ import {
   HomeFeaturedSection,
   FeaturedVideo,
   FeaturedContent,
-  FeaturedProjects,
 } from "../../styles/homeStyles"
 import { useInView } from "react-intersection-observer"
 

@@ -8,18 +8,17 @@ export const Nav = styled(motion.div)`
   width: 100%;
   height: 100%;
   display: block;
-  background: ${props => props.theme.red};
+  background: ${(props) => props.theme.red};
   color: #000;
   z-index: 100;
   overflow: hidden;
-  
 `
 
 export const NavHeader = styled.div`
   top: 72px;
   position: relative;
   h2 {
-    color: ${props => props.theme.background};
+    color: ${(props) => props.theme.background};
   }
 `
 export const CloseNav = styled.div`
@@ -33,7 +32,7 @@ export const CloseNav = styled.div`
       width: 36px;
       height: 8px;
       display: block;
-      background: ${props => props.theme.background};
+      background: ${(props) => props.theme.background};
       margin: 8px;
     }
   }
@@ -44,9 +43,8 @@ export const NavList = styled.div`
   display: flex;
   align-items: center;
   @media (max-width: 650px) {
-  position: relative;
-  display: grid;
-  
+    position: relative;
+    display: grid;
   }
   ul {
     padding: 0;
@@ -61,9 +59,9 @@ export const NavList = styled.div`
       @media (max-width: 650px) {
         height: 80px;
         font-size: 2.5rem;
-  }
+      }
       .link {
-        color: ${props => props.theme.background};
+        color: ${(props) => props.theme.background};
         position: relative;
         display: flex;
         align-items: center;
@@ -75,7 +73,7 @@ export const NavList = styled.div`
       svg {
         width: 100px;
         path {
-          fill: ${props => props.theme.background};
+          fill: ${(props) => props.theme.background};
         }
       }
     }
@@ -88,16 +86,16 @@ export const NavFooter = styled.div`
   width: 100%;
   padding: 56px 10px;
   p {
-    color: ${props => props.theme.background};
+    color: ${(props) => props.theme.background};
   }
   svg path {
-    fill: ${props => props.theme.background};
+    fill: ${(props) => props.theme.background};
   }
 `
 
 export const NavVideos = styled.div`
-@media (max-width: 650px) {
-        display: none;
+  @media (max-width: 650px) {
+    display: none;
   }
   position: absolute;
   top: 0;

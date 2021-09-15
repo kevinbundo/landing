@@ -1,69 +1,182 @@
-import React, { useState, useEffect } from "react"
-import {motion} from 'framer-motion'
+import React from "react"
+import { Container } from "../../styles/globalStyles"
+import { HomeBannerAnim, HomeBannerAnimTitle } from "../../styles/homeStyles"
+
+const homeTexts = [
+  "React",
+  "Node",
+  "Express",
+  "Jquery",
+  "Next",
+  "Gatsby",
+  "Node",
+  "Express",
+  "Jquery",
+  "Next",
+  "Gatsby",
+]
+
+const homeTexts2 = [
+  "Wordpress",
+  "Git",
+  "Express",
+  "Framer Motion",
+  "Html",
+  "Css",
+  "Mysql",
+]
 
 const HomeAnnimation = () => {
-   
-    // const letters = [
-    //     {
-    //       id: 0,
-    //       results: [
-    //         "Vanilla",
-    //         "React js",
-    //         "Node js",
-    //         "Express js",
-    //         "Jquery",
-            
-    //       ],
-    //     },
-    //     {
-    //       id: 1,
-    //       results: [
-    //         "Principle Photography",
-    //       ],
-    //     },
-    //     {
-    //       id: 2,
-    //       results: [
-    //         "Colour correction",
-    //         "Offline editing",
-    //         "Online editing",
-    //         "VFX",
-    //         "Animation and motion graphics",
-    //         "Closed captioning and subtitles",
-    //         "Descriptive video",
-    //         "Dailies",
-    //         "Quality control",
-    //         "LTO Archiving",
-    //       ],
-    //     },
-    //   ]
-      
-
-    const banner = {
-        animate: {
-          transition: {
-            delayChildren: 0.4,
-            staggerChildren: 0.1,
-          },
+  const mirror = {
+    initial: { x: 0 },
+    animate: {
+      x: [-550, -10],
+      transition: {
+        x: {
+          repeat: Infinity,
+          repeatType: "mirror",
+          duration: 2,
+          ease: "linear",
+          repeatDelay: 0.1,
+          //ease:  [0.6, 0.05, -0.01, 0.9],
         },
-      };
-
-    const letterAni = {
-        initial: { y: 400 },
-        animate: {
-          y: 0,
-          transition: {
-            ease: [0.6, 0.01, -0.05, 0.95],
-            duration: 1,
-          },
-        },
-      };
-
-    return (
-    <motion.div className='banner' variants={banner}>
-      
-    </motion.div>
-    )
+      },
+    },
   }
-  
-  export default HomeAnnimation
+
+  const reverse = {
+    initial: { x: 0 },
+    animate: {
+      x: [-450, -50],
+      transition: {
+        x: {
+          repeat: Infinity,
+          repeatType: "reverse",
+          duration: 5,
+          ease: "linear",
+
+          //ease:  [0.6, 0.05, -0.01, 0.9],
+        },
+      },
+    },
+  }
+  return (
+    <Container>
+      <HomeBannerAnim>
+        {homeTexts.map((index) => (
+          <HomeBannerAnimTitle
+            initial="initial"
+            variants={mirror}
+            animate="animate"
+          >
+            {index}
+          </HomeBannerAnimTitle>
+        ))}
+      </HomeBannerAnim>
+
+      <HomeBannerAnim>
+        {homeTexts2.map((index) => (
+          <HomeBannerAnimTitle
+            initial="initial"
+            variants={reverse}
+            animate="animate"
+          >
+            {index}
+          </HomeBannerAnimTitle>
+        ))}
+      </HomeBannerAnim>
+    </Container>
+  )
+}
+
+// const AnimatedLetters = ({ title, disabled }) => (
+//   <motion.span
+//     className='row-title'
+//     variants={disabled ? null : banner}
+//     initial='initial'
+//     animate='animate'>
+//     {[...title].map((letter) => (
+//       <motion.span
+//         className='row-letter'
+//         variants={disabled ? null : letterAni}>
+//         {letter}
+//       </motion.span>
+//     ))}
+//   </motion.span>
+// );
+
+// const BannerRowTop = ({ title }) => {
+//   return (
+//     <div className={"banner-row"}>
+//       <div className='row-col'>
+//         <AnimatedLetters title={title} />
+//       </div>
+//       <motion.div
+//         initial={{ opacity: 0, y: 80 }}
+//         animate={{ opacity: 1, y: 0 }}
+//         transition={{
+//           ease: "easeInOut",
+//           duration: 1,
+//           delay: 0.4,
+//         }}
+//         className='row-col'>
+//         <span className='row-message'>
+//           We are specialised in setting up the foundation of your brand and
+//           setting you up for success.
+//         </span>
+//       </motion.div>
+//     </div>
+//   );
+// };
+
+// const BannerRowBottom = ({ title }) => {
+//   return (
+//     <div className={"banner-row center"}>
+//       <motion.div
+//         initial={{ scale: 0 }}
+//         animate={{ scale: 1 }}
+//         transition={{ ease: [0.6, 0.01, -0.05, 0.95], duration: 1, delay: 1 }}
+//         className='scroll'>
+//         <motion.span
+//           initial={{ opacity: 0 }}
+//           animate={{ opacity: 1 }}
+//           transition={{
+//             ease: "easeInOut",
+//             duration: 1,
+//             delay: 1.8,
+//           }}>
+//           scroll
+//         </motion.span>
+//         <motion.span
+//           initial={{ opacity: 0 }}
+//           animate={{ opacity: 1 }}
+//           transition={{
+//             ease: "easeInOut",
+//             duration: 1,
+//             delay: 1.8,
+//           }}>
+//           down
+//         </motion.span>
+//       </motion.div>
+//       <AnimatedLetters title={title} />
+//     </div>
+//   );
+// };
+
+// const BannerRowCenter = ({ title, playMarquee }) => {
+//   return (
+//     <div className={`banner-row marquee  ${playMarquee && "animate"}`}>
+//       <motion.div
+//         initial={{ y: 310 }}
+//         animate={{ y: 0 }}
+//         transition={{ ease: [0.6, 0.01, -0.05, 0.9], duration: 1 }}
+//         className='marquee__inner'>
+//         <AnimatedLetters title={title} disabled />
+//         <AnimatedLetters title={title} />
+//         <AnimatedLetters title={title} disabled />
+//         <AnimatedLetters title={title} disabled />
+//       </motion.div>
+//     </div>
+//   );
+// };
+export default HomeAnnimation
