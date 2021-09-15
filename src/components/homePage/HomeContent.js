@@ -32,9 +32,10 @@ const HomeContent = () => {
     >
       <Container>
         <Content>
-         I am a creative front-end developer dedicated to creating unique digital experiences.
-         I create projects under the notion that less is more and my work reflects my addiction 
-         for minimal and clean design as well as my desire to push boundaries.
+          I am a creative front-end developer dedicated to creating unique
+          digital experiences. I create projects under the notion that less is
+          more and my work reflects my addiction for minimal and clean design as
+          well as my desire to push boundaries.
         </Content>
       </Container>
     </HomeContentSection>

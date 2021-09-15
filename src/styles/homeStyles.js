@@ -278,7 +278,6 @@ export const HomeBannerAnim = styled(motion.div)`
   margin-bottom: 0px;
   margin-left: 0;
   white-space: nowrap;
-  
 `
 
 export const HomeBannerAnimTitle = styled(motion.h3)`
@@ -288,5 +287,4 @@ export const HomeBannerAnimTitle = styled(motion.h3)`
   color: ${(props) => props.theme.text};
   white-space: nowrap;
   display: inline-block;
-  
 `
