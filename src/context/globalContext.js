@@ -26,6 +26,7 @@ const globalReducer = (state, action) => {
 }
 
 export const GlobalProvider = ({ children }) => {
+  useEffect(() => {
   const [state, dispatch] = useReducer(globalReducer, {
     currentTheme:
     
@@ -36,7 +37,7 @@ export const GlobalProvider = ({ children }) => {
     cursorType: false,
     cursorStyles: ["pointer", "hovered", "locked"],
   
-  })
+  })})
   return (
     <GlobalDispatchContext.Provider value={dispatch}>
       <GlobalStateContext.Provider value={state}>
