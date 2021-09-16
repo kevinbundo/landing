@@ -2,26 +2,22 @@ import { useState, useEffect } from "react"
 
 export default function useWindowSize() {
   function getSize() {
-    if (typeof window !== `undefined`) {
-      let width = window.innerWidth
-      let height = window.innerHeight
-    }
     return {
-      width,
-      height,
+      width: global.innerWidth,
+      height: global.innerHeight,
     }
   }
+  const [windowSize, setWindowSize] = useState(getSize)
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize(getSize())
+    }
+
+    global.addEventListener("resize", handleResize)
+
+    return () => window.addEventListener("resize", handleResize)
+  }, [])
+
+  return windowSize
 }
-
-const [windowSize, setWindowSize] = useState(getSize)
-
-useEffect(() => {
-  function handleResize() {
-    setWindowSize(getSize())
-  }
-
-  window.addEventListener("resize", handleResize)
-  return () => window.removeEventListener("resize", handleResize)
-}, [])
-
-return windowSize
