@@ -1,10 +1,17 @@
 import { useState, useEffect } from "react"
 
 export default function useWindowSize() {
+
+  
   function getSize() {
+    if (typeof window !== `undefined`){
+    var  width =  window.innerWidth,
+     var  height = window.innerHeight,
+    }
     return {
-      width: window.innerWidth,
-      height: window.innerHeight,
+      width,
+      height
+    }
     }
   }
 
@@ -20,4 +27,4 @@ export default function useWindowSize() {
   }, [])
 
   return windowSize
-}
+
