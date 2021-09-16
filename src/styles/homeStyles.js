@@ -82,6 +82,7 @@ export const Content = styled(motion.h2)`
 `
 export const HomeFeaturedSection = styled(motion.div)`
   margin-bottom: 200px;
+  margin-top: 100px;
   position: relative;
   a {
     margin-bottom: 200px;
