@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react"
-
+import { window } from 'browser-monads';
 import { HeaderNav, Logo, Menu } from "../styles/headerStyles"
 import { Container, Flex } from "../styles/globalStyles"
 import { Link } from "gatsby"
