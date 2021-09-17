@@ -1,5 +1,5 @@
 import React, { createContext, useReducer, useContext } from "react"
-import { window } from 'browser-monads';
+
 const GlobalStateContext = createContext()
 const GlobalDispatchContext = createContext()
 

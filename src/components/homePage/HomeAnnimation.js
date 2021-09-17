@@ -54,6 +54,7 @@ const HomeAnnimation = () => {
           repeatType: "reverse",
           duration: 5,
           ease: "linear",
+          
           //ease:  [0.6, 0.05, -0.01, 0.9],
         },
       },

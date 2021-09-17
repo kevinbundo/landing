@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react"
-import { window } from 'browser-monads';
+
 import { HeaderNav, Logo, Menu } from "../styles/headerStyles"
 import { Container, Flex } from "../styles/globalStyles"
 import { Link } from "gatsby"
@@ -30,7 +30,7 @@ const Header = ({
   }
   const menuHover = () => {
     onCursor("locked")
-    setHamburgerPosition({ x: position.x, y: position.y +110 })
+    setHamburgerPosition({ x: position.x, y: position.y + 110 })
   }
 
   useEffect(() => {
