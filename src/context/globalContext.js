@@ -2,7 +2,7 @@ import React, { createContext, useReducer, useContext } from "react"
 
 const GlobalStateContext = createContext()
 const GlobalDispatchContext = createContext()
-const isBrowser = typeof window !== "undefined"
+
 //Reducer
 
 const globalReducer = (state, action) => {
@@ -26,16 +26,17 @@ const globalReducer = (state, action) => {
 }
 
 
+
 export const GlobalProvider = ({ children }) => {
   
   
 
   const [state, dispatch] = useReducer(globalReducer, {
-    if (isBrowser) {
-    currentTheme:
-      window.localStorage.getItem("theme") == null
-        ? "dark"
-        : window.localStorage.getItem("theme")},
+    
+    // currentTheme:
+      // window.localStorage.getItem("theme") == null
+      //   ? "dark"
+      //   : window.localStorage.getItem("theme"),
 
     cursorType: false,
     cursorStyles: ["pointer", "hovered", "locked"],
