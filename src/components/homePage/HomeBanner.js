@@ -45,7 +45,7 @@ const HomeBanner = ({ onCursor }) => {
         drawingCtx.moveTo(lastX, lastY)
         drawingCtx.lineTo(currentX, currentY)
         drawingCtx.closePath()
-        drawingCtx.lineWidth = 300
+        drawingCtx.lineWidth = 120
         drawingCtx.stroke()
         lastX = currentX
         lastY = currentY
@@ -78,8 +78,8 @@ const HomeBanner = ({ onCursor }) => {
         <video height="100%" width="100%" loop autoPlay muted src={video1} />
       </Video>
       <Canvas
-        height="100%"
-        width="100%"
+        height={size.height}
+        width={size.width}
         ref={canvas}
         onMouseEnter={() => onCursor("hovered")}
         onMouseLeave={onCursor}

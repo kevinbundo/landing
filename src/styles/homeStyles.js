@@ -20,6 +20,7 @@ export const Video = styled.div`
   }
 `
 export const Canvas = styled.canvas`
+display: none;
   position: absolute;
   top: 0;
   left: 0;
