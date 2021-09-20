@@ -25,17 +25,17 @@ const HomeBanner = ({ onCursor }) => {
     renderingCtx.globalCompositeOperation = "source-over"
     renderingCtx.fillStyle = currentTheme === "dark" ? "#000000" : "#ffffff"
     renderingCtx.fillRect(0, 0, size.width, size.height)
-    renderingElement.addEventListener("mouseover", e => {
+    renderingElement.addEventListener("mouseover", (e) => {
       moving = true
       lastX = e.pageX - renderingElement.offsetLeft
       lastY = e.pageY - renderingElement.offsetTop
     })
-    renderingElement.addEventListener("mouseup", e => {
+    renderingElement.addEventListener("mouseup", (e) => {
       moving = false
       lastX = e.pageX - renderingElement.offsetLeft
       lastY = e.pageY - renderingElement.offsetTop
     })
-    renderingElement.addEventListener("mousemove", e => {
+    renderingElement.addEventListener("mousemove", (e) => {
       if (moving) {
         drawingCtx.globalCompositeOperation = "source-over"
         renderingCtx.globalCompositeOperation = "destination-out"
@@ -45,7 +45,7 @@ const HomeBanner = ({ onCursor }) => {
         drawingCtx.moveTo(lastX, lastY)
         drawingCtx.lineTo(currentX, currentY)
         drawingCtx.closePath()
-        drawingCtx.lineWidth = 60
+        drawingCtx.lineWidth = 300
         drawingCtx.stroke()
         lastX = currentX
         lastY = currentY
@@ -78,8 +78,8 @@ const HomeBanner = ({ onCursor }) => {
         <video height="100%" width="100%" loop autoPlay muted src={video1} />
       </Video>
       <Canvas
-        height={size.height}
-        width={size.width}
+        height="100%"
+        width="100%"
         ref={canvas}
         onMouseEnter={() => onCursor("hovered")}
         onMouseLeave={onCursor}
