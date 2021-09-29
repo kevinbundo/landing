@@ -31,7 +31,7 @@ const HomeBanner = ({ onCursor }) => {
       lastY = e.pageY - renderingElement.offsetTop
     })
     renderingElement.addEventListener("mouseup", (e) => {
-      moving = false
+      moving = true
       lastX = e.pageX - renderingElement.offsetLeft
       lastY = e.pageY - renderingElement.offsetTop
     })
@@ -45,7 +45,7 @@ const HomeBanner = ({ onCursor }) => {
         drawingCtx.moveTo(lastX, lastY)
         drawingCtx.lineTo(currentX, currentY)
         drawingCtx.closePath()
-        drawingCtx.lineWidth = 40
+        drawingCtx.lineWidth = 80;
         drawingCtx.stroke()
         lastX = currentX
         lastY = currentY
@@ -54,11 +54,11 @@ const HomeBanner = ({ onCursor }) => {
     })
   }, [currentTheme])
   const parent = {
-    initial: { y: 800 },
+    initial: { y: 200 },
     animate: {
       y: 0,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.1,
       },
     },
   }
